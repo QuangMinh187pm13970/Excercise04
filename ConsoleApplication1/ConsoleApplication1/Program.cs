@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("hello github");
+            // Console.WriteLine(isPrime(6));
+             Console.WriteLine(Ceil((float)-12.8));
+             Console.WriteLine(Floor((float)-12.5));
+          //  Console.WriteLine(Rand1());
+           // Console.WriteLine(Rand2());
+           // Console.WriteLine(Factorial(5));
+
+        }
+        public static bool isOdd(int n)
+        {
+            if (n % 2 == 1)
+                return true;
+            return false;
+        }
+        public static bool isEven(int n)
+        {
+            if (n % 2 == 0)
+                return true;
+            return false;
+        }
+        public static bool isPrime(int n)
+        {
+            int count = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                if (n % i == 0)
+                    count++;
+            }
+            if (count == 2)
+                return true;
+            return false;
+        }
+        public static int Square(int n)
+        {
+            return n * n;
+        }
+        public static int Cube(int n)
+        {
+            return n * n * n;
+        }
+        public static int Pow(int x, int y)
+        {
+            int R = 1;
+            for(int i=1;i<=y;i++)
+            {
+                R = R * x;
+            }
+            return R;
+         }
+        public static int Abs(int n)
+        {
+            if (n > 0)
+                n = n;
+            else
+                n = n * (-1);
+            return n;
+        }
+        //returns the smallest integral value not less than x.
+        //idea : if x<0 return int x;
+        // int < float
+        public static int Ceil(float x)
+        {
+            int a= (int)x;
+            if (x > 0)
+                if(x>a)
+                return a= a+1;
+
+
+            return a;
+        }
+       public static int Floor(float x)
+        {
+            int a = (int)x;
+            if (x < 0)
+                return a-1;
+
+
+            return a;
+        }
+        public static int Rand1()
+        {
+            Random rand = new Random();
+
+            int rd = rand.Next(0, 2147483647);
+            return rd;
+        }
+        public static float Rand2()
+        {
+            Random rand = new Random();
+            var n = rand.NextDouble();
+            return (float)n;
+        }
+        public static long Factorial(long n)
+        {
+            if (n == 1)
+                return n = 1;
+
+            return Factorial(n - 1) * n;
+           // long R = 1;
+          //  for (int i = 1; i <= n; i++)
+          //  {
+           //     R = R * i;
+          //  }
+          //  return R;
+
+        }
+
+    }
+}
